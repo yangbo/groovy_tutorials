@@ -1,0 +1,6 @@
+= 安装 Asciidoc
+
+阅读 https://asciidoctor.org/#c-windows[安装文档]。
+
+https://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor的Gradle插件] 可以用来生成Asciidoctor项目文档。
+
