@@ -31,7 +31,7 @@ Asciidoctor 分 header 和 序(preamble)、节(section)、块(block)、段落 �
     :toc: <3>
     :sectnums: <4>
 
-<1> 告诉 Asciidoctor 使用font-awesome来显示警告图示，没有这个开关，警告icon这是显示一个文字而已，很难看。
+<1> 告诉 Asciidoctor 使用font-awesome来显示警告图示，没有这个开关，警告块只会显示WARN字样，很难看。
 <2> 告诉 Asciidoctor 支持在文档中加入 https://asciidoctor.org/docs/user-manual/#mathematical-expressions[数学公式]。
 <3> 告诉 Asciidoctor 生成目录
 <4> 告诉 Asciidoctor 给小节Section添加数字
