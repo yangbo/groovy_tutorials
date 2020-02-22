@@ -1,6 +1,66 @@
-= 安装 Asciidoc
+= Asciidoc 简介
+杨波 <bo.yang@telecwin.com>
+:icons: font
+:stem:
+:toc:
 
-阅读 https://asciidoctor.org/#c-windows[安装文档]。
+Asciidoctor 是一个比 Markdown 更先进、复杂的文档书写和生成工具，它定义了类似 Markdown 的文字格式，但是能生成更好看的文档、提供
+更强大的排版、内容创作功能，尤其是在文档中加入示例代码的方法也更为方便。
 
-https://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor的Gradle插件] 可以用来生成Asciidoctor项目文档。
+下面让我们开始Asciidoc使用之旅吧...
 
+== 阅读方法
+
+我们将边做边写，对每一个功能都是先给出示例结果，后给出如何做的方法，最后再详细讲解这个功能。
+
+== Asciidoc 文档的主体结构
+
+Asciidoc 分 head 和 body 两大部分。
+
+== 换行
+
+
+    敲了回车换行键就换行显示！
+    不是很好吗？
+
+是这样达成的
+
+    换行就换行！ +
+    不是很好吗？
+
+那么效果就是
+
+数学公式怎么写？
+stem:[sqrt(4)=2]
+
+警告 (admonitions) 怎么写？
+
+NOTE: 这是有用信息。
+
+TIP: 小技巧
+
+IMPORTANT: 重要事情说三遍。
+
+CAUTION: 注意了，数学公式用的 MathJS、FontAwesome 用的 CSS 在中国很可能访问很慢或者访问不了，需要将这些 js、css 都本地化。
+
+WARNING: 这是一个警告。
+
+现在我们来写一个代码片段
+
+[source, groovy]
+class HelloGroovy {
+    def name
+    def sayHello(){
+        println("hello!")
+    }
+}
+
+看起来还不错！
+
+== 常用格式
+
+
+== 参考资料
+
+1. 阅读 https://asciidoctor.org/#c-windows[安装文档]。
+2. https://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor的Gradle插件] 可以用来生成Asciidoctor项目文档。
