@@ -1,0 +1,13 @@
+= Groovy 和 Asciidoctor 教程
+杨波 <bo.yang@telecwin.com>
+:sectnums:
+
+== 使用方法
+
+有价值的部分是 docs 中的文档，请用下面的命令构建
+
+    gradlew.bat asciidoctor
+
+== 转载请指明出处
+
+这个项目记录了我使用 Asciidoctor 以及 Groovy 的心得，希望能帮到你，如果希望把这些内容用于商业，请与我联系。
