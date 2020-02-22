@@ -148,7 +148,7 @@ class HelloGroovy {
 ====
 
 是这样写的
-
+[literal, subs="-callouts"]
 ....
 [source, groovy]
 class HelloGroovy {
@@ -175,10 +175,48 @@ class HelloGroovy {
     这是一个示例块，是不是很醒目？
     ====
 
+=== 去掉注释(callouts)的原文块(literal block)
+
+[literal, subs="-callouts"]
+....
+[source, groovy]
+class HelloGroovy {
+    def name <1>
+    def sayHello(){ <2>
+        println("hello!")
+    }
+}
+
+<1> 定义属性
+<2> 定义方法
+....
+
+是这样写的
+
+[literal, subs="-callouts"]
+......
+[literal, subs="-callouts"]
+....
+[source, groovy]
+class HelloGroovy {
+    def name <1>
+    def sayHello(){ <2>
+        println("hello!")
+    }
+}
+
+<1> 定义属性
+<2> 定义方法
+....
+......
+
+NOTE: 这里需要用两个 "...." 将“原文块”包裹起来，并且添加了替换参数 subs="-callouts"，以便不显示成注释数字。
+
 
 === 参考手册
 
-https://asciidoctor.org/docs/user-manual/#built-in-blocks-summary[各种块的定义方法，以及块如何处理其中的字符]
+* https://asciidoctor.org/docs/user-manual/#built-in-blocks-summary[各种块的定义方法，以及块如何处理其中的字符]
+* https://asciidoctor.org/docs/user-manual/#applying-substitutions[指定替换模式]
 
 == 参考资料
 
