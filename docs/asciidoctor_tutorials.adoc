@@ -221,6 +221,44 @@ NOTE: 这里需要用两个 "...." 将“原文块”包裹起来，并且添加
 * https://asciidoctor.org/docs/user-manual/#built-in-blocks-summary[各种块的定义方法，以及块如何处理其中的字符]
 * https://asciidoctor.org/docs/user-manual/#applying-substitutions[指定替换模式]
 
+== 在gradle项目中集成 asciidoctor
+
+=== 添加依赖
+
+**build.gradle**
+[source, groovy]
+--
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.9.2'
+    }
+}
+
+plugins {
+    id 'groovy'
+    id 'java'
+}
+apply plugin: 'org.asciidoctor.convert'
+--
+
+=== 配置文档的路径
+**build.gradle**
+[source, groovy]
+--
+asciidoctor {
+    sourceDir = file('docs')
+}
+--
+
+=== 执行文档构建任务
+
+    gradlew.bat asciidoctor
+
+就会在 build/asciidoc/html5 目录下看到生成的文档了。
+
 == 参考资料
 
 1. 阅读 https://asciidoctor.org/#c-windows[安装文档]。

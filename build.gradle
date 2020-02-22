@@ -10,7 +10,6 @@ buildscript {
 plugins {
     id 'groovy'
     id 'java'
-    //id 'org.asciidoctor.gradle.asciidoctor' version "1.5.1"
 }
 apply plugin: 'org.asciidoctor.convert'
 
