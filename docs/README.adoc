@@ -1,4 +1,4 @@
-= Asciidoc 简明教程
+= Asciidoctor 简明教程
 杨波 <bo.yang@telecwin.com>
 :icons: font
 :stem:
@@ -8,7 +8,7 @@
 Asciidoctor 是一个比 Markdown 更先进、复杂的文档书写和生成工具，它定义了类似 Markdown 的文字格式，但是能生成更好看的文档、提供
 了更强大的排版和文档创作功能，尤其是能非常方便地在文档中加入示例代码和注释。
 
-下面让我们开始Asciidoc使用之旅吧...
+下面让我们开始Asciidoctor使用之旅吧...
 
 == 首先是工具
 
@@ -17,11 +17,12 @@ ____
 工欲善其事，必先利其器
 ____
 
-== Asciidoc 文档的主体结构
+== Asciidoctor 文档的主体结构
 
-Asciidoc 分 head 和 body 两大部分。在 head 中可以定义一些属性，这些属性就像是开关，告诉 Asciidoctor 打开哪些功能。
+Asciidoctor 分 header 和 序(preamble)、节(section)、块(block)、段落 等部分。
+在 header 中可以定义一些属性，这些属性就像是开关，告诉 Asciidoctor 打开哪些功能。
 
-比如本文的 head 是这样的
+比如本文的 header 是这样的
 
     = Asciidoc 简明教程
     杨波 <bo.yang@telecwin.com>
