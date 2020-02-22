@@ -72,7 +72,7 @@ Asciidoctor 分 header 和 序(preamble)、节(section)、块(block)、段落 �
 
 CAUTION: **+**加号前面要有一个空格，否则不起作用。
 
-== 数学公式
+=== 数学公式
 
 ****
 stem:[sqrt(4)=2]
@@ -162,8 +162,8 @@ class HelloGroovy {
 <2> 定义方法
 ....
 
-== 块
-=== 示例 example 块
+=== 块
+==== 示例块(example block)
 
 ====
 这是一个示例块，是不是很醒目？
@@ -175,8 +175,10 @@ class HelloGroovy {
     这是一个示例块，是不是很醒目？
     ====
 
-=== 去掉注释(callouts)的原文块(literal block)
+==== 去掉注释(callouts)的原文块(literal block)
 
+[example]
+--
 [literal, subs="-callouts"]
 ....
 [source, groovy]
@@ -190,6 +192,7 @@ class HelloGroovy {
 <1> 定义属性
 <2> 定义方法
 ....
+--
 
 是这样写的
 
@@ -210,10 +213,10 @@ class HelloGroovy {
 ....
 ......
 
-NOTE: 这里需要用两个 "...." 将“原文块”包裹起来，并且添加了替换参数 subs="-callouts"，以便不显示成注释数字。
+NOTE: 这里需要用两个 "...." 将“原文块”包裹起来，并且添加了替换参数 subs="-callouts"，以便<1>不显示成注释数字。
 
 
-=== 参考手册
+==== 参考手册
 
 * https://asciidoctor.org/docs/user-manual/#built-in-blocks-summary[各种块的定义方法，以及块如何处理其中的字符]
 * https://asciidoctor.org/docs/user-manual/#applying-substitutions[指定替换模式]
