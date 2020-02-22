@@ -1,40 +1,89 @@
-= Asciidoc 简介
+= Asciidoc 简明教程
 杨波 <bo.yang@telecwin.com>
 :icons: font
 :stem:
 :toc:
+:sectnums:
 
 Asciidoctor 是一个比 Markdown 更先进、复杂的文档书写和生成工具，它定义了类似 Markdown 的文字格式，但是能生成更好看的文档、提供
-更强大的排版、内容创作功能，尤其是在文档中加入示例代码的方法也更为方便。
+了更强大的排版和文档创作功能，尤其是能非常方便地在文档中加入示例代码和注释。
 
 下面让我们开始Asciidoc使用之旅吧...
 
-== 阅读方法
+== 首先是工具
 
-我们将边做边写，对每一个功能都是先给出示例结果，后给出如何做的方法，最后再详细讲解这个功能。
+[quote, 《论语·卫灵公》, idea+asciidoctor插件就不错]
+____
+工欲善其事，必先利其器
+____
 
 == Asciidoc 文档的主体结构
 
-Asciidoc 分 head 和 body 两大部分。
+Asciidoc 分 head 和 body 两大部分。在 head 中可以定义一些属性，这些属性就像是开关，告诉 Asciidoctor 打开哪些功能。
 
-== 换行
+比如本文的 head 是这样的
 
+    = Asciidoc 简明教程
+    杨波 <bo.yang@telecwin.com>
+    :icons: font <1>
+    :stem: <2>
+    :toc: <3>
+    :sectnums: <4>
 
-    敲了回车换行键就换行显示！
-    不是很好吗？
+<1> 告诉 Asciidoctor 使用font-awesome来显示警告图示，没有这个开关，警告icon这是显示一个文字而已，很难看。
+<2> 告诉 Asciidoctor 支持在文档中加入 https://asciidoctor.org/docs/user-manual/#mathematical-expressions[数学公式]。
+<3> 告诉 Asciidoctor 生成目录
+<4> 告诉 Asciidoctor 给小节Section添加数字
+
+== 各种格式示例
+
+=== 阅读方法
+
+我们将边做边写，对每一个功能都是先给出示例，紧接着是如何做，最后再详细讲解这个功能。
+
+=== 段落
+
+====
+这是一个段落，这是一个段落，这是一个段落，这是一个段落，这是一个段落，这是一个段落，这是一个段落
+
+这是另外一个段落，这是另外一个段落，这是另外一个段落，这是另外一个段落，这是另外一个段落，这是另外一个段落
+====
+
+这样写就可以了，段落之间留一空行
+
+....
+这是一个段落，这是一个段落，这是一个段落，这是一个段落，这是一个段落，这是一个段落，这是一个段落
+
+这是另外一个段落，这是另外一个段落，这是另外一个段落，这是另外一个段落，这是另外一个段落，这是另外一个段落
+....
+
+=== 换行显示而不是另起一个分段落
+
+====
+敲了回车换行键就换行显示！ +
+不是很好吗？
+====
 
 是这样达成的
 
     换行就换行！ +
     不是很好吗？
 
-那么效果就是
+CAUTION: **+**加号前面要有一个空格，否则不起作用。
 
-数学公式怎么写？
+== 数学公式
+
+****
 stem:[sqrt(4)=2]
+****
 
-警告 (admonitions) 怎么写？
+这样写的
 
+    stem:[sqrt(4)=2]
+
+=== 各种警告、提示 (admonitions)
+
+====
 NOTE: 这是有用信息。
 
 TIP: 小技巧
@@ -44,9 +93,25 @@ IMPORTANT: 重要事情说三遍。
 CAUTION: 注意了，数学公式用的 MathJS、FontAwesome 用的 CSS 在中国很可能访问很慢或者访问不了，需要将这些 js、css 都本地化。
 
 WARNING: 这是一个警告。
+====
 
-现在我们来写一个代码片段
+这样写的
 
+    NOTE: 这是有用信息。
+
+    TIP: 小技巧
+
+    IMPORTANT: 重要事情说三遍。
+
+    CAUTION: 注意了，数学公式用的 MathJS、FontAwesome 用的 CSS 在中国很可能访问很慢或者访问不了，需要将这些 js、css 都本地化。
+
+    WARNING: 这是一个警告。
+
+重要程度从轻到重。
+
+=== 代码片段
+
+====
 [source, groovy]
 class HelloGroovy {
     def name
@@ -54,11 +119,65 @@ class HelloGroovy {
         println("hello!")
     }
 }
+====
 
-看起来还不错！
+看起来还不错！是这样写的
 
-== 常用格式
+    [source, groovy]
+    class HelloGroovy {
+        def name
+        def sayHello(){
+            println("hello!")
+        }
+    }
 
+=== 加注解的代码片段
+
+====
+[source, groovy]
+class HelloGroovy {
+    def name <1>
+    def sayHello(){ <2>
+        println("hello!")
+    }
+}
+
+<1> 定义属性
+<2> 定义方法
+====
+
+是这样写的
+
+....
+[source, groovy]
+class HelloGroovy {
+    def name <1>
+    def sayHello(){ <2>
+        println("hello!")
+    }
+}
+
+<1> 定义属性
+<2> 定义方法
+....
+
+== 块
+=== 示例 example 块
+
+====
+这是一个示例块，是不是很醒目？
+====
+
+是这样写的
+
+    ====
+    这是一个示例块，是不是很醒目？
+    ====
+
+
+=== 参考手册
+
+https://asciidoctor.org/docs/user-manual/#built-in-blocks-summary[各种块的定义方法，以及块如何处理其中的字符]
 
 == 参考资料
 
