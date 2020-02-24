@@ -215,7 +215,12 @@ class HelloGroovy {
 
 NOTE: 这里需要用两个 "...." 将“原文块”包裹起来，并且添加了替换参数 subs="-callouts"，以便<1>不显示成注释数字。
 
-==== 表格
+==== 参考手册
+
+* https://asciidoctor.org/docs/user-manual/#built-in-blocks-summary[各种块的定义方法，以及块如何处理其中的字符]
+* https://asciidoctor.org/docs/user-manual/#applying-substitutions[指定替换模式]
+
+=== 表格
 
 [example]
 --
@@ -240,11 +245,6 @@ NOTE: 这里需要用两个 "...." 将“原文块”包裹起来，并且添加
 | 单元格31 | 单元格32
 |===
 --
-
-==== 参考手册
-
-* https://asciidoctor.org/docs/user-manual/#built-in-blocks-summary[各种块的定义方法，以及块如何处理其中的字符]
-* https://asciidoctor.org/docs/user-manual/#applying-substitutions[指定替换模式]
 
 == 在gradle项目中集成 asciidoctor
 
