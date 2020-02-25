@@ -33,3 +33,22 @@ dependencies {
 asciidoctor {
     sourceDir = file('docs')
 }
+
+// 下面的配置会让gradle先编译groovy，后编译java，以便在 java 中使用 groovy 类
+// ref: https://coderwall.com/p/wuqopq/compile-groovy-before-java-in-gradle-build
+// 因为 groovy 插件默认会先编译 java 后编译 groovy，导致 java 找不到 groovy 的类。
+sourceSets {
+    main {
+        groovy {
+            // this makes the groovy-compiler compile groovy- as well
+            // as java-files.
+            // Needed, because java is normally compiled before groovy.
+            // Since we are using groovy objects from java, we need it
+            // the other way round.
+            srcDirs = ['src/main/groovy', 'src/main/java']
+        }
+        java {
+            srcDirs = [] // don't compile Java code twice
+        }
+    }
+}
