@@ -308,3 +308,7 @@ asciidoctor {
 
 1. 阅读 https://asciidoctor.org/#c-windows[安装文档]。
 2. https://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor的Gradle插件] 可以用来生成Asciidoctor项目文档。
+
+== 版权
+
+欢迎转载，请指明出处，如需用于商业用途，请与我 mailto:bo.yang@telecwin.com[联系]。
